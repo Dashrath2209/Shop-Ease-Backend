@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "*")
+
 public class ProductController {
 
     @Autowired
