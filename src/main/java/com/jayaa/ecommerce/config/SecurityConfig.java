@@ -63,27 +63,22 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        //  Allow all Vercel deployments + localhost
-        configuration.setAllowedOriginPatterns(Arrays.asList(
-                "http://localhost:*",
-                "https://*.vercel.app"
-        ));
+        // ✅ Allow all origins for testing (change this after testing)
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         
-        //  Allow all necessary methods
-        configuration.setAllowedMethods(Arrays.asList(
-                "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"
-        ));
+        // ✅ Allow all HTTP methods
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         
-        //  Allow all headers
+        // ✅ Allow all headers
         configuration.setAllowedHeaders(Arrays.asList("*"));
         
-        //  Allow credentials (cookies, authorization headers)
+        // ✅ Allow credentials (cookies, authorization headers)
         configuration.setAllowCredentials(true);
         
-        //  Expose headers for frontend to read
+        // ✅ Expose headers for frontend to read
         configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
         
-        //  Cache preflight requests for 1 hour
+        // ✅ Cache preflight requests for 1 hour
         configuration.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
