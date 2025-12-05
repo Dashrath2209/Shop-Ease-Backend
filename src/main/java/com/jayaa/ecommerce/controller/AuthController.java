@@ -1,6 +1,8 @@
 package com.jayaa.ecommerce.controller;
 
-import com.jayaa.ecommerce.dto.*;
+import com.jayaa.ecommerce.dto.AuthRequest;
+import com.jayaa.ecommerce.dto.AuthResponse;
+import com.jayaa.ecommerce.dto.RegisterRequest;
 import com.jayaa.ecommerce.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired
