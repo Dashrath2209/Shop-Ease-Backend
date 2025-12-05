@@ -1,11 +1,10 @@
 spring:
   application:
     name: ecommerce-system
-
   datasource:
-    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/ecommerce_system?useSSL=false&allowPublicKeyRetrieval=true}
-    username: ${DATABASE_USER:ecommerce_user}
-    password: ${DATABASE_PASSWORD:ecommerce_pass}
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -32,8 +31,7 @@ spring:
   web:
     cors:
       allowed-origin-patterns:
-        - http://localhost:*
-        - https://*.vercel.app
+        - ${FRONTEND_URL}
       allowed-methods: GET,POST,PUT,DELETE,OPTIONS,PATCH
       allowed-headers: "*"
       allow-credentials: true
@@ -49,7 +47,7 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:MyEcommerceSecretKeyForJWTMustBeAtLeast32CharactersLong123456}
+    secret: ${JWT_SECRET}
     expirationMs: 86400000
 
 file:
@@ -62,4 +60,4 @@ logging:
     com.jayaa.ecommerce: DEBUG
 
 frontend:
-  url: ${FRONTEND_URL:http://localhost:3000}
+  url: ${FRONTEND_URL}
