@@ -24,22 +24,37 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+  web:
+    cors:
+      allowed-origin-patterns:
+        - http://localhost:*
+        - https://*.vercel.app
+      allowed-methods: GET,POST,PUT,DELETE,OPTIONS,PATCH
+      allowed-headers: "*"
+      allow-credentials: true
+      exposed-headers: Authorization
+      max-age: 3600
+
 server:
   port: ${PORT:8080}
   error:
     include-message: always
     include-binding-errors: always
     include-stacktrace: on_param
+
 app:
   jwt:
     secret: ${JWT_SECRET:MyEcommerceSecretKeyForJWTMustBeAtLeast32CharactersLong123456}
     expirationMs: 86400000
+
 file:
   upload-dir: uploads
+
 logging:
   level:
     org.flywaydb: DEBUG
     org.springframework.jdbc: DEBUG
     com.jayaa.ecommerce: DEBUG
+
 frontend:
   url: ${FRONTEND_URL:http://localhost:3000}
