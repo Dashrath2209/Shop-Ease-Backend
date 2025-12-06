@@ -43,7 +43,7 @@ public class Order {
     @Column(name = "delivered_date")
     private LocalDateTime deliveredDate;
 
-    // ⭐ RELATIONSHIP 7: Order has many order itemss
+    // ⭐ RELATIONSHIP 7: Order has many order items
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items = new ArrayList<>();
 }
