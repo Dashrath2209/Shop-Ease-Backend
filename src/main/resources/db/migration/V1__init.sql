@@ -1,5 +1,5 @@
 -- ========================================
--- E-COMMERCE SYSTEM - INITIAL SCHEMA
+-- E-COMMERCE SYSTEM - INITIAL SCHEMA --
 -- ========================================
 
 -- Users table
