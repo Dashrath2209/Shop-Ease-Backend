@@ -130,8 +130,8 @@ CREATE TABLE reviews (
 -- Insert admin user (password: admin123)
 INSERT INTO users (username, email, password, full_name, phone, address, role, enabled)
 VALUES
-('admin', 'admin@ecommerce.com', '$2a$10$xQ5rX1Yx6N6V2Vk8.pN9OuO2Z8sF3xK1wF6G7H8I9J0K1L2M3N4O5', 'Admin User', '1234567890', '123 Admin St', 'ADMIN', TRUE),
-('customer1', 'customer@example.com', '$2a$10$xQ5rX1Yx6N6V2Vk8.pN9OuO2Z8sF3xK1wF6G7H8I9J0K1L2M3N4O5', 'John Customer', '9876543210', '456 Customer Ave', 'CUSTOMER', TRUE);
+('admin', 'admin@ecommerce.com', '$2a$12$2MVZgVqa9NrptU2Vyfq7bOFXYJxowBu6Vp1tYvPzENIjCsa99HDqW', 'Admin User', '1234567890', '123 Admin St', 'ADMIN', TRUE),
+('customer1', 'customer@example.com', '$2a$12$2MVZgVqa9NrptU2Vyfq7bOFXYJxowBu6Vp1tYvPzENIjCsa99HDqW', 'John Customer', '9876543210', '456 Customer Ave', 'CUSTOMER', TRUE);
 
 -- Insert categories
 INSERT INTO categories (name, slug, description) VALUES
