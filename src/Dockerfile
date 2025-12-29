@@ -22,23 +22,3 @@ EXPOSE 8080
 
 # Run the application
 ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
-```
-
-5. **Commit the file** (click "Commit changes")
-
----
-
-## 📝 **Step 2: Update Render Settings**
-
-Go back to Render dashboard:
-
-### **In Settings → Build & Deploy:**
-
-1. **Build Command:** Leave **EMPTY** or put:
-```
-   (empty)
-```
-
-2. **Start Command:** Leave **EMPTY** or put:
-```
-   (empty)
