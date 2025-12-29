@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: shop-ease-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
