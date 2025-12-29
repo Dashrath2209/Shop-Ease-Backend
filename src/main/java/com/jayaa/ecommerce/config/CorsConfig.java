@@ -7,22 +7,22 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
-
+    
     @Value("${frontend.url}")
     private String frontendUrl;
-
+    
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
         registry.addMapping("/**")
                 .allowedOrigins(
                         frontendUrl,
-                        "http://localhost:3000"
+                        "http://localhost:3000",
+                        "https://your-vercel-app.vercel.app"  // Add your Vercel URL here
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
                 .allowedHeaders("*")
                 .allowCredentials(true)
-                .exposedHeaders("Authorization")
+                .exposedHeaders("Authorization", "Content-Type")
                 .maxAge(3600);
     }
 }
